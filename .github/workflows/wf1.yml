@@ -1,0 +1,10 @@
+name: build-nuc7-industry
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make clean
+      - run: make BOARD_FILE=$PWD/misc/vm_configs/xmls/board-xmls/nuc7i7dnb.xml SCENARIO_FILE=$PWD/misc/vm_configs/xmls/config-xmls/nuc7i7dnb/industry.xml
+
